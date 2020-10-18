@@ -13,6 +13,9 @@ const render = require("./lib/htmlRenderer");
 //create empty teamMembers array
 const teamMembers = [];
 
+//create empty id array
+const idArray = [];
+
 //team generator function
 function teamGenerator() {
 
@@ -35,7 +38,16 @@ function teamGenerator() {
             },
             {
                 name: "managerId",
-                message: "Manager's employee id:"
+                message: "Manager's employee id:",
+                validate: answer => {
+                    const pass = answer.match(
+                        /^[1-9]\d*$/
+                    );
+                    if (pass) {
+                        return true;
+                    }
+                    return "Please enter positive number greater than zero.";
+                }
             },
             {
                 name: "managerEmail",
@@ -66,6 +78,9 @@ function teamGenerator() {
             );
             //push new instance of manager to teamMembers array
             teamMembers.push(manager);
+
+            //push manager id to id array
+            idArray.push(answers.managerId);
 
             //call createTeam function
             createTeam();
@@ -121,7 +136,20 @@ function teamGenerator() {
             },
             {
                 name: "engineerId",
-                message: "Engineer's employee id:"
+                message: "Engineer's employee id:",
+                validate: answer => {
+                    const pass = answer.match(
+                        /^[1-9]\d*$/
+                    );
+                    if (pass) {
+                        if (idArray.includes(answer)) {
+                            return "ID number already assigned. Try again."
+                        } else {
+                            return true;
+                        }
+                    }
+                    return "ID must be a positive number greater than zero. Try again."
+                }
             },
             {
                 name: "engineerEmail",
@@ -153,6 +181,9 @@ function teamGenerator() {
             //push new instance of engineer to teamMembers array
             teamMembers.push(engineer);
 
+            //push engineer id to id array
+            idArray.push(answers.engineerId);
+
             //restart createTeam prompts to create new member
             createTeam();
         });
@@ -174,7 +205,20 @@ function teamGenerator() {
             },
             {
                 name: "internId",
-                message: "Intern's employee id:"
+                message: "Intern's employee id:",
+                validate: answer => {
+                    const pass = answer.match(
+                        /^[1-9]\d*$/
+                    );
+                    if (pass) {
+                        if (idArray.includes(answer)) {
+                            return "ID number already assigned. Try again."
+                        } else {
+                            return true;
+                        }
+                    }
+                    return "ID must be a positive number greater than zero. Try again."
+                }
             },
             {
                 name: "internEmail",
@@ -205,6 +249,9 @@ function teamGenerator() {
         
             //push new instance of intern to teamMembers array
             teamMembers.push(intern);
+
+            //push intern id to id array
+            idArray.push(answers.internId);
 
             //restart createTeam prompts to create new member
             createTeam();
