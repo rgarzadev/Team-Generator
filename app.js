@@ -25,7 +25,13 @@ function teamGenerator() {
         inquirer.prompt([
             {
                 name: "managerName",
-                message: "Manager's name:"
+                message: "Manager's name:",
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "This field cannot be blank."
+                }
             },
             {
                 name: "managerId",
@@ -96,7 +102,13 @@ function teamGenerator() {
         inquirer.prompt([
             {
                 name: "engineerName",
-                message: "Engineer's name:"
+                message: "Engineer's name:",
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "This field cannot be blank."
+                }
             },
             {
                 name: "engineerId",
@@ -134,7 +146,13 @@ function teamGenerator() {
         inquirer.prompt([
             {
                 name: "internName",
-                message: "Intern's name:"
+                message: "Intern's name:",
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "This field cannot be blank."
+                }
             },
             {
                 name: "internId",
