@@ -39,7 +39,16 @@ function teamGenerator() {
             },
             {
                 name: "managerEmail",
-                message: "Manager's email:"
+                message: "Manager's email:",
+                validate: answer => {
+                    const pass = answer.match(
+                        /\S+@\S+\.\S+/
+                    );
+                    if (pass) {
+                        return true;
+                    }
+                    return "Please enter valid email address.";
+                }
             },
             {
                 name: "managerOfficeNumber",
@@ -116,7 +125,16 @@ function teamGenerator() {
             },
             {
                 name: "engineerEmail",
-                message: "Engineer's email:"
+                message: "Engineer's email:",
+                validate: answer => {
+                    const pass = answer.match(
+                        /\S+@\S+\.\S+/
+                    );
+                    if (pass) {
+                        return true;
+                    }
+                    return "Please enter valid email address.";
+                }
             },
             {
                 name: "engineerGithub",
@@ -160,7 +178,16 @@ function teamGenerator() {
             },
             {
                 name: "internEmail",
-                message: "Intern's email:"
+                message: "Intern's email:",
+                validate: answer => {
+                    const pass = answer.match(
+                        /\S+@\S+\.\S+/
+                    );
+                    if (pass) {
+                        return true;
+                    }
+                    return "Please enter valid email address.";
+                }
             },
             {
                 name: "internSchool",
