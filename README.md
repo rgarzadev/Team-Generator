@@ -2,7 +2,7 @@
 
 ## Project Links:
 
-Github Repository: https://github.com/rgarzadev/Team-Generator
+Github Repository: https://github.com/rgarzadev/Team-Generator<br>
 Demo Video: https://drive.google.com/file/d/1VtvGKddR2gHcwFYOWY1WunnnLKLlQPQ3/view?usp=sharing
 
 ### Description:
