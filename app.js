@@ -29,6 +29,8 @@ function teamGenerator() {
             {
                 name: "managerName",
                 message: "Manager's name:",
+
+                //validate name not empty string
                 validate: answer => {
                     if (answer !== "") {
                         return true;
@@ -39,6 +41,8 @@ function teamGenerator() {
             {
                 name: "managerId",
                 message: "Manager's employee id:",
+
+                //validate id number format
                 validate: answer => {
                     const pass = answer.match(
                         /^[1-9]\d*$/
@@ -52,6 +56,8 @@ function teamGenerator() {
             {
                 name: "managerEmail",
                 message: "Manager's email:",
+
+                //validate email format
                 validate: answer => {
                     const pass = answer.match(
                         /\S+@\S+\.\S+/
@@ -127,6 +133,8 @@ function teamGenerator() {
             {
                 name: "engineerName",
                 message: "Engineer's name:",
+
+                //validate name not empty string
                 validate: answer => {
                     if (answer !== "") {
                         return true;
@@ -137,6 +145,8 @@ function teamGenerator() {
             {
                 name: "engineerId",
                 message: "Engineer's employee id:",
+
+                //validate id number unique and format
                 validate: answer => {
                     const pass = answer.match(
                         /^[1-9]\d*$/
@@ -154,6 +164,8 @@ function teamGenerator() {
             {
                 name: "engineerEmail",
                 message: "Engineer's email:",
+
+                // validate email format
                 validate: answer => {
                     const pass = answer.match(
                         /\S+@\S+\.\S+/
@@ -196,6 +208,8 @@ function teamGenerator() {
             {
                 name: "internName",
                 message: "Intern's name:",
+
+                //validate name not empty string
                 validate: answer => {
                     if (answer !== "") {
                         return true;
@@ -206,6 +220,8 @@ function teamGenerator() {
             {
                 name: "internId",
                 message: "Intern's employee id:",
+
+                //validate id number unique and format
                 validate: answer => {
                     const pass = answer.match(
                         /^[1-9]\d*$/
@@ -223,6 +239,8 @@ function teamGenerator() {
             {
                 name: "internEmail",
                 message: "Intern's email:",
+
+                //validate email format
                 validate: answer => {
                     const pass = answer.match(
                         /\S+@\S+\.\S+/
